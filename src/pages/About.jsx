@@ -65,7 +65,7 @@ export default function About() {
               patients each day.
             </p>
             <div className="page-cta">
-              <Link to="/contact" className="btn btn--primary">Request an Appointment</Link>
+              <Link to="/contact" className="btn btn--primary">Get in Touch</Link>
             </div>
           </div>
         </div>

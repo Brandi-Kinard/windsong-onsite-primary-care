@@ -20,8 +20,6 @@
 
 .hero-actions { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-md); }
 
-.hero-family { font-size: clamp(1rem, 1.4vw, 1.2rem); color: var(--text-medium); }
-
 .hero-media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 3 / 4; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; }
 

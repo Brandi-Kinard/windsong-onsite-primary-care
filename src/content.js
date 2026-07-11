@@ -10,9 +10,9 @@ export const practice = {
   tagline: 'Compassionate Onsite Primary Care for Older Adults',
   brandLine1: 'Windsong',
   brandLine2: 'Onsite Primary Care',
-  phone: '(980) 585-2016', // [PLACEHOLDER] confirm — currently the psych practice number
-  fax: '(980) 585-2019',   // [PLACEHOLDER] confirm
-  email: 'contact@windsongcare.com', // [PLACEHOLDER] confirm mailbox exists
+  phone: '(980) 585-2019',
+  fax: '(980) 585-2016',
+  email: 'contact@windsongprimary.com', // [PLACEHOLDER] confirm mailbox exists
   sisterSite: { name: 'Windsong Family & Psychiatric Associates', url: 'https://www.windsongpsychiatric.com' },
 };
 
@@ -35,13 +35,12 @@ export const locations = [
 export const images = {
   hero: {
     src: '/hero.png',
-    alt: 'A clinician giving an older adult patient a vaccination',
-    label: 'Hero photo — clinician vaccinating an older adult',
+    alt: 'A clinician resting a reassuring hand on an older adult patient’s shoulder',
+    label: 'Hero photo — clinician comforting an older adult',
   },
   provider: {
-    // Felicia's real headshot, hosted in the imageSamples repo (same hosting
-    // pattern as the psych site). Swap to felicia-l-davis.png if preferred.
-    src: 'https://raw.githubusercontent.com/Brandi-Kinard/imageSamples/main/windsong-psych/felicia-davis.avif',
+    // Felicia's real headshot, served locally from public/.
+    src: '/provider.png',
     alt: 'Felicia Davis, provider at Windsong Primary Care',
     label: 'Provider portrait — Felicia Davis',
   },
@@ -51,9 +50,9 @@ export const images = {
     label: 'About photo — provider with patient',
   },
   services: {
-    src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&q=80&auto=format&fit=crop',
-    alt: 'A clinician reviewing a care plan with a patient',
-    label: 'Services photo — care planning',
+    src: '/services.png',
+    alt: 'A caregiver and an older adult laughing warmly together on a couch',
+    label: 'Services photo — caring connection',
   },
 };
 
@@ -62,55 +61,62 @@ export const images = {
 // a labeled beige fallback if a URL fails.
 export const carouselImages = [
   {
-    src: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80&auto=format&fit=crop',
-    alt: 'Clinician holding the hands of an older patient',
-    label: 'Photo 1 — clinician & older adult',
+    src: '/carousel-hands.png',
+    alt: 'Caregiver holding the hands of an older patient',
+    label: 'Photo 1 — caregiver & older adult',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=800&q=80&auto=format&fit=crop',
-    alt: 'Provider taking a patient’s blood pressure',
-    label: 'Photo 2 — blood pressure check',
+    src: '/carousel-seated-exercise.png',
+    alt: 'Older adult doing a seated leg exercise in a group fitness class',
+    label: 'Photo 2 — seated exercise class',
   },
   {
-    src: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&q=80&auto=format&fit=crop',
-    alt: 'A caring conversation between provider and patient',
+    src: '/carousel-coffee-laugh.png',
+    alt: 'Caregiver and older adult laughing together over coffee',
     label: 'Photo 3 — caring conversation',
   },
   {
-    src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80&auto=format&fit=crop',
-    alt: 'Active older adults outdoors',
+    src: '/carousel-autumn-walk.png',
+    alt: 'Older couple walking hand in hand through an autumn park',
     label: 'Photo 4 — active older adults',
   },
   {
-    src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80&auto=format&fit=crop',
-    alt: 'Clinician reviewing a care plan with a patient',
-    label: 'Photo 5 — care planning',
+    src: '/carousel-home-cooking.png',
+    alt: 'Older adult preparing a fresh meal at home',
+    label: 'Photo 5 — healthy home cooking',
   },
   {
-    src: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&auto=format&fit=crop',
-    alt: 'Older adult patient smiling during a checkup',
+    src: '/carousel-stethoscope-exam.png',
+    alt: 'Nurse listening to an older patient’s heart with a stethoscope',
     label: 'Photo 6 — patient checkup',
   },
   {
-    src: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&q=80&auto=format&fit=crop',
-    alt: 'Provider consulting with an older adult patient',
-    label: 'Photo 7 — provider consultation',
+    src: '/carousel-bp-check.png',
+    alt: 'Nurse checking an older adult’s blood pressure at home',
+    label: 'Photo 7 — blood pressure check',
   },
 ];
 
-// [PLACEHOLDER] — real patient testimonial (with written permission) needed.
-export const testimonial = {
-  quote:
-    'After years of feeling rushed through appointments, I finally have a doctor who listens. Felicia takes the time to explain everything and treats me like family.',
-  name: 'Margaret H.', // [PLACEHOLDER]
-  detail: 'Patient since 2026', // [PLACEHOLDER]
-  stars: 5,
-  image: {
-    src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80&auto=format&fit=crop',
-    alt: 'Smiling older adult patient',
-    label: 'Testimonial photo — older adult headshot',
+export const testimonials = [
+  {
+    quote:
+      'Felicia Davis has been a godsend for me. She listens well, asks questions, and looks out for my best interest. Anytime I’ve needed her, she somehow fits me in. I’m so grateful.',
+    name: 'Beth Rushing',
+    stars: 5,
   },
-};
+  {
+    quote:
+      'Felicia is an expert in medication management. As a senior living professional, I have seen her help our residents stabilize and have complete 180 experiences. She is holistic in her approach and has excellent customer service with our families. I 100% recommend her services to anyone in need!',
+    name: 'Sylena Hutchinson',
+    stars: 5,
+  },
+  {
+    quote:
+      'Windsong Family and Psychiatric Association provided exceptional care to my residents in an Assisted Living Facility. Felicia would ensure clear communication not only with the family but with the team as well. Her treatment plans were personalized to the needs of the resident and her focus was to meet the resident where they were in the moment to give the support needed. We are very thankful to have had the privilege to work in partnership with her.',
+    name: 'Keisha Ellis',
+    stars: 5,
+  },
+];
 
 export const services = [
   {
@@ -130,8 +136,8 @@ export const services = [
     desc: 'Early, gentle screening for memory concerns, with clear next steps and coordination with specialists.', // [PLACEHOLDER]
   },
   {
-    title: 'Preventive Care & Immunizations',
-    desc: 'Vaccinations, screenings, and lifestyle guidance tailored to each stage of older adulthood.', // [PLACEHOLDER]
+    title: 'Preventive Care',
+    desc: 'Screenings and lifestyle guidance tailored to each stage of older adulthood.', // [PLACEHOLDER]
   },
   {
     title: 'Telehealth Visits',

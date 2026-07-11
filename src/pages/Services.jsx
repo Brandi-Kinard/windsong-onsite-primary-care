@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SmartImage from '../components/SmartImage';
-import { services, images, testimonial } from '../content';
+import { services, images, testimonials } from '../content';
 import './Page.css';
 
 export default function Services() {
@@ -29,22 +29,20 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Testimonial — [PLACEHOLDER] swap in a real patient quote (with permission) */}
+      {/* Testimonials */}
       <section className="section section--tint">
-        <div className="container testimonial-grid">
-          <div className="testimonial-media">
-            <SmartImage image={testimonial.image} className="testimonial-img" />
-          </div>
-          <div className="testimonial-body">
-            <div className="testimonial-stars" aria-label={`${testimonial.stars} out of 5 stars`}>
-              {'★'.repeat(testimonial.stars)}
+        <div className="container testimonial-list">
+          {testimonials.map((t) => (
+            <div className="testimonial-body" key={t.name}>
+              <div className="testimonial-stars" aria-label={`${t.stars} out of 5 stars`}>
+                {'★'.repeat(t.stars)}
+              </div>
+              <blockquote className="testimonial-quote">
+                “{t.quote}”
+              </blockquote>
+              <p className="testimonial-name">{t.name}</p>
             </div>
-            <blockquote className="testimonial-quote">
-              “{testimonial.quote}”
-            </blockquote>
-            <p className="testimonial-name">{testimonial.name}</p>
-            <p className="testimonial-detail">{testimonial.detail}</p>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -62,7 +60,7 @@ export default function Services() {
               Psychiatric Associates, whole-person care — physical and mental — stays in the family.
             </p>
             <div className="page-cta">
-              <Link to="/contact" className="btn btn--primary">Request an Appointment</Link>
+              <Link to="/contact" className="btn btn--primary">Get in Touch</Link>
             </div>
           </div>
           <div className="about-media">

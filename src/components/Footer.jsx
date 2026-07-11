@@ -45,7 +45,7 @@ export default function Footer() {
 
         <div>
           <h4>Contact</h4>
-          <p><a href={`tel:${practice.phone.replace(/[^0-9]/g, '')}`}>{practice.phone}</a></p>
+          <p>Phone: <a href={`tel:${practice.phone.replace(/[^0-9]/g, '')}`}>{practice.phone}</a></p>
           <p>Fax: {practice.fax}</p>
           <p><a href={`mailto:${practice.email}`}>{practice.email}</a></p>
         </div>

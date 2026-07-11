@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import SmartImage from '../components/SmartImage';
+import Insurance from '../components/Insurance';
 import { practice, locations, images, carouselImages } from '../content';
 import './Home.css';
 
@@ -19,15 +20,9 @@ export default function Home() {
               the conditions that come with time. {/* [PLACEHOLDER copy] */}
             </p>
             <div className="hero-actions">
-              <Link to="/contact" className="btn btn--primary">Request an Appointment</Link>
+              <Link to="/contact" className="btn btn--primary">Get in Touch</Link>
               <Link to="/services" className="btn btn--outline">Explore Services</Link>
             </div>
-            <p className="hero-family">
-              Part of the Windsong family — sister practice of{' '}
-              <a href={practice.sisterSite.url} target="_blank" rel="noopener noreferrer">
-                {practice.sisterSite.name}
-              </a>.
-            </p>
           </div>
           <div className="hero-media">
             <SmartImage image={images.hero} className="hero-img" />
@@ -44,6 +39,9 @@ export default function Home() {
           <div><strong>Coordinated Care</strong><span>Working with your specialists</span></div>
         </div>
       </section>
+
+      {/* Insurance acceptance */}
+      <Insurance />
 
       {/* Services preview — auto-scrolling image carousel */}
       <section className="section">
@@ -113,7 +111,7 @@ export default function Home() {
           <p>New patients are welcome. Call us or send a request — we'll take it from there.</p>
           <div className="cta-actions">
             <a href={`tel:${practice.phone.replace(/[^0-9]/g, '')}`} className="btn btn--primary">Call {practice.phone}</a>
-            <Link to="/contact" className="btn btn--outline">Request an Appointment</Link>
+            <Link to="/contact" className="btn btn--outline">Get in Touch</Link>
           </div>
           <div className="cta-tree" aria-hidden="true">
             {/* Brown falling-leaves tree — same asset as the psych site navbar */}

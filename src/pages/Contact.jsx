@@ -52,7 +52,7 @@ export default function Contact() {
           </div>
 
           <div className="contact-form-wrap">
-            <h2>Request an appointment</h2>
+            <h2>Get in touch</h2>
             {sent && <p className="form-sent">Thank you — your email draft has been opened. If it didn't, please email us directly.</p>}
             <form onSubmit={handleSubmit} className="contact-form">
               <label>
@@ -71,7 +71,7 @@ export default function Contact() {
                 How can we help?
                 <textarea name="message" rows="5" required />
               </label>
-              <button type="submit" className="btn btn--primary">Send request</button>
+              <button type="submit" className="btn btn--primary">Send</button>
               <p className="form-privacy">
                 Please do not include sensitive medical details in this form.
               </p>
