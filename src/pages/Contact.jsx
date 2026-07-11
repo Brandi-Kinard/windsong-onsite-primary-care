@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { practice, locations } from '../content';
 import './Page.css';
 
@@ -73,7 +74,9 @@ export default function Contact() {
               </label>
               <button type="submit" className="btn btn--primary">Send</button>
               <p className="form-privacy">
-                Please do not include sensitive medical details in this form.
+                Please do not include sensitive medical details in this form. This form is not a
+                secure channel for protected health information. See our{' '}
+                <Link to="/privacy">Privacy Policy</Link> for how we handle your information under HIPAA.
               </p>
             </form>
           </div>

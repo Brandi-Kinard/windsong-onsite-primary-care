@@ -15,7 +15,7 @@ export default function Home() {
           <div className="hero-copy">
             <h1>{practice.tagline}</h1>
             <p>
-              Windsong Primary Care offers attentive, unhurried primary care with a special
+              Windsong Onsite Primary Care offers attentive, unhurried primary care with a special
               focus on the health of older adults — from prevention and wellness to managing
               the conditions that come with time. {/* [PLACEHOLDER copy] */}
             </p>

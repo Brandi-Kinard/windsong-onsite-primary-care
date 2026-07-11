@@ -11,7 +11,7 @@ export default function About() {
         <div className="container">
           <span className="section-label">Meet the Provider</span>
           <h1>Felicia Davis</h1>
-          <p>MSN, PMHNP-BC, FNP-BC — Provider, Windsong Primary Care</p>
+          <p>MSN, PMHNP-BC, FNP-BC — Provider, Windsong Onsite Primary Care</p>
         </div>
       </section>
 

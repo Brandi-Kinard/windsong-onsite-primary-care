@@ -5,8 +5,8 @@
 ---------------------------------------------------------------- */
 
 export const practice = {
-  name: 'Windsong Primary Care',
-  legalName: 'Windsong Primary Care', // [PLACEHOLDER] confirm legal entity name
+  name: 'Windsong Onsite Primary Care',
+  legalName: 'Windsong Onsite Primary Care', // [PLACEHOLDER] confirm legal entity name
   tagline: 'Compassionate Onsite Primary Care for Older Adults',
   brandLine1: 'Windsong',
   brandLine2: 'Onsite Primary Care',
@@ -41,7 +41,7 @@ export const images = {
   provider: {
     // Felicia's real headshot, served locally from public/.
     src: '/provider.png',
-    alt: 'Felicia Davis, provider at Windsong Primary Care',
+    alt: 'Felicia Davis, provider at Windsong Onsite Primary Care',
     label: 'Provider portrait — Felicia Davis',
   },
   about: {
@@ -112,7 +112,7 @@ export const testimonials = [
   },
   {
     quote:
-      'Windsong Family and Psychiatric Association provided exceptional care to my residents in an Assisted Living Facility. Felicia would ensure clear communication not only with the family but with the team as well. Her treatment plans were personalized to the needs of the resident and her focus was to meet the resident where they were in the moment to give the support needed. We are very thankful to have had the privilege to work in partnership with her.',
+      'Windsong provided exceptional care to my residents in an Assisted Living Facility. Felicia would ensure clear communication not only with the family but with the team as well. Her treatment plans were personalized to the needs of the resident and her focus was to meet the resident where they were in the moment to give the support needed. We are very thankful to have had the privilege to work in partnership with her.',
     name: 'Keisha Ellis',
     stars: 5,
   },

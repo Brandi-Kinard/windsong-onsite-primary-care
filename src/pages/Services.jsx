@@ -56,7 +56,7 @@ export default function Services() {
               making sure nothing falls through the cracks. {/* [PLACEHOLDER] */}
             </p>
             <p>
-              And because Windsong Primary Care is a sister practice of Windsong Family &amp;
+              And because Windsong Onsite Primary Care is a sister practice of Windsong Family &amp;
               Psychiatric Associates, whole-person care — physical and mental — stays in the family.
             </p>
             <div className="page-cta">

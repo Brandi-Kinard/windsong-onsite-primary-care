@@ -94,6 +94,8 @@
 
 /* Legal */
 .legal-body p { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.55rem); margin-bottom: var(--spacing-sm); max-width: 760px; }
+.legal-body h2 { font-size: clamp(1.4rem, 2.2vw, 1.9rem); color: var(--text-dark); margin: var(--spacing-lg) 0 var(--spacing-xs); }
+.legal-updated { font-size: 1rem !important; color: var(--text-light); margin-bottom: var(--spacing-md); }
 
 @media (max-width: 860px) {
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
