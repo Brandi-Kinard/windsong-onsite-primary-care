@@ -1,22 +1,54 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 import { practice, locations } from '../content';
 import './Page.css';
 
+// EmailJS configuration — uses the shared Windsong account/service, with a
+// dedicated "Windsong Onsite Primary Care Contact Us" template scoped to this
+// form's fields and its "To Email" set to {{to_email}} (RECIPIENT_EMAIL below).
+const EMAILJS_SERVICE_ID = 'service_idvcxum';
+const EMAILJS_TEMPLATE_ID = 'template_znq7ap5';
+const EMAILJS_PUBLIC_KEY = 'wFQLtLxDwWnkGF0TF';
+const RECIPIENT_EMAIL = 'contact@windsongonsite.com';
+
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  // NOTE: This form currently opens the user's email client (mailto).
-  // Swap in EmailJS (same pattern as the psych site) once a template
-  // and destination inbox are confirmed.
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    const body = encodeURIComponent(
-      `Name: ${data.get('name')}\nPhone: ${data.get('phone')}\nEmail: ${data.get('email')}\n\n${data.get('message')}`
-    );
-    window.location.href = `mailto:${practice.email}?subject=${encodeURIComponent('Appointment request — website')}&body=${body}`;
-    setSent(true);
+    const form = e.target;
+    const data = new FormData(form);
+
+    setIsSubmitting(true);
+    setError(false);
+
+    try {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      const templateParams = {
+        to_email: RECIPIENT_EMAIL,
+        reply_to: data.get('email'),
+        name: data.get('name'),
+        email: data.get('email'),
+        phone: data.get('phone'),
+        message: data.get('message'),
+        date: new Date().toLocaleDateString(),
+        time: new Date().toLocaleTimeString(),
+      };
+
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
+      form.reset();
+      setSent(true);
+    } catch (err) {
+      console.error('Error sending contact form:', err);
+      setError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -54,7 +86,14 @@ export default function Contact() {
 
           <div className="contact-form-wrap">
             <h2>Get in touch</h2>
-            {sent && <p className="form-sent">Thank you — your email draft has been opened. If it didn't, please email us directly.</p>}
+            {sent && <p className="form-sent">Thank you — your message has been sent. We'll get back to you promptly.</p>}
+            {error && (
+              <p className="form-error">
+                Sorry, something went wrong sending your message. Please call us at{' '}
+                <a href={`tel:${practice.phone.replace(/[^0-9]/g, '')}`}>{practice.phone}</a> or email{' '}
+                <a href={`mailto:${practice.email}`}>{practice.email}</a> directly.
+              </p>
+            )}
             <form onSubmit={handleSubmit} className="contact-form">
               <label>
                 Full name
@@ -72,7 +111,9 @@ export default function Contact() {
                 How can we help?
                 <textarea name="message" rows="5" required />
               </label>
-              <button type="submit" className="btn btn--primary">Send</button>
+              <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending…' : 'Send'}
+              </button>
               <p className="form-privacy">
                 Please do not include sensitive medical details in this form. This form is not a
                 secure channel for protected health information. See our{' '}
