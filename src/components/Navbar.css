@@ -1,0 +1,115 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar-brand { position: relative; display: flex; align-items: baseline; gap: 0.5rem; }
+
+/* Brown falling-leaves tree — same treatment as the windsongpsych.com navbar:
+   faded animation sitting behind the logotype */
+.brand-lottie {
+  position: absolute;
+  height: 72px;
+  width: auto;
+  opacity: 0.3;
+  top: -6px;
+  left: -38px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.brand-script {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+}
+
+.brand-rest {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+/* On larger-than-mobile viewports, size the whole brand mark up so it reads
+   more clearly — bigger tree, script, and descriptor. */
+@media (min-width: 641px) {
+  .navbar-inner { height: 96px; }
+  .brand-lottie { height: 96px; left: -50px; top: -8px; }
+  .brand-script { font-size: 2.4rem; }
+  .brand-rest { font-size: 1.3rem; }
+}
+@media (min-width: 941px) {
+  .navbar-inner { height: 108px; }
+  .brand-lottie { height: 108px; left: -58px; top: -10px; }
+  .brand-script { font-size: 2.7rem; }
+  .brand-rest { font-size: 1.45rem; }
+}
+
+.navbar-links { display: flex; align-items: center; gap: var(--spacing-lg); }
+
+.navbar-links a:not(.navbar-cta) {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-base);
+}
+
+.navbar-links a:not(.navbar-cta):hover { color: var(--primary-hover); }
+.navbar-links a.active { color: var(--primary-hover); border-bottom-color: var(--primary-color); }
+
+.navbar-cta { padding: 0.55rem 1.3rem; font-size: 0.92rem; }
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.navbar-toggle span {
+  width: 24px; height: 2px;
+  background: var(--text-dark);
+  transition: all var(--transition-base);
+}
+.navbar-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-toggle.is-open span:nth-child(2) { opacity: 0; }
+.navbar-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 860px) {
+  .navbar-toggle { display: flex; }
+  .navbar-links {
+    position: absolute;
+    top: 72px; left: 0; right: 0;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-light);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    display: none;
+  }
+  .navbar-links.is-open { display: flex; }
+}

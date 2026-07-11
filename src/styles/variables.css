@@ -1,0 +1,51 @@
+/* Global CSS variables — Windsong Primary Care
+   Sister palette to windsongpsych.com: warm beige/neutral primary,
+   Windsong teal retained as the secondary/family tone. */
+:root {
+  /* Brand — warm neutrals */
+  --primary-color: #9C7A5B;      /* warm taupe brown (buttons, accents) */
+  --primary-hover: #82644A;      /* darker taupe */
+  --primary-light: #F3EAE0;      /* light beige */
+  --primary-lighter: #FAF7F2;    /* near-white warm cream */
+  --accent-blush: #E2C7C0;       /* soft blush (from the psych site navbar) */
+
+  /* Family tie-in — Windsong teal (secondary) */
+  --teal: #246D80;
+  --teal-dark: #006B6B;
+  --teal-light: #E5F2F6;
+
+  /* Text */
+  --text-dark: #2b2622;
+  --text-medium: #6f665e;
+  --text-light: #a39a90;
+
+  /* Surfaces & borders */
+  --bg-light: #FAF7F2;
+  --bg-white: #ffffff;
+  --border-light: #eadfd3;
+  --border-medium: #d8c9b8;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 5rem;
+
+  /* Type */
+  --font-heading: 'Fraunces', Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(60, 45, 30, 0.06);
+  --shadow-md: 0 4px 10px rgba(60, 45, 30, 0.08);
+  --shadow-lg: 0 10px 24px rgba(60, 45, 30, 0.10);
+
+  /* Radius & transitions */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition-base: 0.2s ease-in-out;
+}

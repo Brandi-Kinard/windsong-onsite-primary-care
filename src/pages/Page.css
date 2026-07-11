@@ -1,0 +1,107 @@
+/* Shared inner-page styles */
+.page-hero {
+  background: linear-gradient(180deg, var(--primary-lighter) 0%, var(--primary-light) 100%);
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+}
+.page-hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); margin: var(--spacing-xs) 0; }
+.page-hero p { color: var(--text-medium); max-width: 720px; font-size: clamp(1.3rem, 2.2vw, 1.9rem); }
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+.about-media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 4 / 5; }
+.about-img { width: 100%; height: 100%; object-fit: cover; }
+.about-copy h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); margin-bottom: var(--spacing-sm); }
+.about-copy h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); margin: var(--spacing-md) 0 var(--spacing-xs); }
+.about-copy p { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.6rem); margin-bottom: var(--spacing-sm); }
+.about-copy ul { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.6rem); padding-left: 1.2rem; }
+.about-copy li { margin-bottom: 0.4rem; }
+.page-cta { margin-top: var(--spacing-lg); }
+
+/* Services */
+.services-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); }
+
+/* Testimonial */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+.testimonial-media {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+  justify-self: center;
+}
+.testimonial-img { width: 100%; height: 100%; object-fit: cover; }
+.testimonial-stars { color: #D9A441; font-size: 1.6rem; letter-spacing: 0.2rem; margin-bottom: var(--spacing-sm); }
+.testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-md);
+}
+.testimonial-name { font-weight: 700; color: var(--text-dark); font-size: clamp(1.15rem, 1.7vw, 1.45rem); }
+.testimonial-detail { color: var(--text-medium); font-size: clamp(1.05rem, 1.5vw, 1.3rem); }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--spacing-2xl); }
+.contact-line { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.55rem); margin-bottom: var(--spacing-sm); }
+.contact-subhead { margin: var(--spacing-md) 0 var(--spacing-sm); }
+.emergency-note {
+  background: var(--primary-light);
+  border-left: 3px solid var(--primary-color);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  font-size: 1.15rem;
+  color: var(--text-medium);
+  margin-top: var(--spacing-md);
+}
+
+.contact-form-wrap {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+.contact-form { display: flex; flex-direction: column; gap: var(--spacing-sm); margin-top: var(--spacing-sm); }
+.contact-form label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; font-size: 1.15rem; }
+.contact-form input, .contact-form textarea {
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--primary-lighter);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+  background: #fff;
+}
+.form-privacy { font-size: 0.8rem; color: var(--text-light); font-weight: 400; }
+.form-sent {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  font-size: 0.92rem;
+}
+
+/* Legal */
+.legal-body p { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.55rem); margin-bottom: var(--spacing-sm); max-width: 760px; }
+
+@media (max-width: 860px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .about-media { max-width: 340px; }
+  .services-detail-grid { grid-template-columns: 1fr; }
+}

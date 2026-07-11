@@ -1,0 +1,137 @@
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--primary-lighter) 0%, var(--primary-light) 100%);
+  padding: var(--spacing-2xl) 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-copy > p { color: var(--text-medium); font-size: clamp(1.2rem, 1.8vw, 1.55rem); margin-bottom: var(--spacing-lg); max-width: 620px; }
+
+.hero-actions { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-md); }
+
+.hero-family { font-size: clamp(1rem, 1.4vw, 1.2rem); color: var(--text-medium); }
+
+.hero-media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 3 / 4; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Trust bar */
+.trustbar { background: var(--bg-white); border-bottom: 1px solid var(--border-light); padding: var(--spacing-lg) 0; }
+.trustbar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md); }
+.trustbar-grid div { display: flex; flex-direction: column; gap: 2px; }
+.trustbar strong { color: var(--primary-hover); font-size: clamp(1.2rem, 1.8vw, 1.5rem); }
+.trustbar span { color: var(--text-medium); font-size: clamp(1.05rem, 1.5vw, 1.3rem); }
+
+/* Services — auto-scrolling image carousel */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: var(--spacing-xl);
+  /* soft fade at the edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.carousel-track {
+  display: flex;
+  gap: var(--spacing-md);
+  width: max-content;
+  animation: carousel-scroll 52s linear infinite;
+}
+.carousel:hover .carousel-track { animation-play-state: paused; }
+.carousel-card {
+  flex: 0 0 auto;
+  width: 340px;
+  height: 240px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--primary-light);
+}
+.carousel-img { width: 100%; height: 100%; object-fit: cover; }
+
+@keyframes carousel-scroll {
+  from { transform: translateX(0); }
+  /* one full copy of the list (7 cards + gaps) */
+  to { transform: translateX(calc(-7 * (340px + var(--spacing-md)))); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .carousel-card { width: 260px; height: 190px; }
+  @keyframes carousel-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-7 * (260px + var(--spacing-md)))); }
+  }
+}
+
+.center-cta { text-align: center; }
+/* higher specificity than .container's `margin: 0 auto`, which would otherwise zero the top margin */
+.container.center-cta { margin-top: var(--spacing-2xl); }
+
+/* Service cards (used on the Services page) */
+.service-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-base);
+}
+.service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--border-medium); }
+.service-card h3 { font-size: clamp(1.4rem, 2vw, 1.75rem); margin-bottom: 0.5rem; }
+.service-card p { color: var(--text-medium); font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
+
+/* Provider */
+.provider-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--spacing-xl); align-items: center; }
+.provider-media { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 4 / 5; max-width: 400px; }
+.provider-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Locations */
+.locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--spacing-md); }
+.location-card {
+  background: var(--primary-lighter);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+}
+.location-card h3 { font-size: clamp(1.4rem, 2vw, 1.75rem); margin-bottom: 0.5rem; }
+.location-card p { color: var(--text-medium); font-size: clamp(1.1rem, 1.6vw, 1.45rem); margin-bottom: 0.6rem; }
+.location-card a { font-size: clamp(1.05rem, 1.5vw, 1.3rem); }
+
+/* CTA band — same background & color conventions as the hero; fully centered */
+.cta-band {
+  background: linear-gradient(180deg, var(--primary-lighter) 0%, var(--primary-light) 100%);
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+.cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-sm);
+}
+.cta-band h2 { font-size: clamp(2rem, 5vw, 3.4rem); color: var(--text-dark); margin-bottom: 0.3rem; }
+.cta-band p { color: var(--text-medium); font-size: clamp(1.25rem, 2.2vw, 1.9rem); max-width: 720px; }
+.cta-actions { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; justify-content: center; margin-top: var(--spacing-sm); }
+.cta-tree { display: flex; justify-content: center; margin-top: var(--spacing-md); }
+.cta-tree-animation { height: 280px; width: auto; }
+
+@media (max-width: 860px) {
+  .hero-grid, .provider-grid { grid-template-columns: 1fr; }
+  .provider-media { max-width: 320px; }
+  .trustbar-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: 1fr; }
+}
