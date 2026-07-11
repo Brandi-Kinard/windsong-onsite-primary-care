@@ -12,7 +12,7 @@ export const practice = {
   brandLine2: 'Onsite Primary Care',
   phone: '(980) 585-2019',
   fax: '(980) 585-2016',
-  email: 'contact@windsongprimary.com', // [PLACEHOLDER] confirm mailbox exists
+  email: 'contact@windsongonsite.com', // [PLACEHOLDER] confirm mailbox exists
   sisterSite: { name: 'Windsong Family & Psychiatric Associates', url: 'https://www.windsongpsychiatric.com' },
 };
 
