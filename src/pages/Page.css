@@ -105,10 +105,72 @@
 /* Legal */
 .legal-body p { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.55rem); margin-bottom: var(--spacing-sm); max-width: 760px; }
 .legal-body h2 { font-size: clamp(1.4rem, 2.2vw, 1.9rem); color: var(--text-dark); margin: var(--spacing-lg) 0 var(--spacing-xs); }
+.legal-body h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); color: var(--text-dark); margin: var(--spacing-md) 0 var(--spacing-xs); }
+.legal-body ul { color: var(--text-medium); font-size: clamp(1.2rem, 1.9vw, 1.55rem); max-width: 760px; padding-left: 1.4rem; margin-bottom: var(--spacing-sm); }
+.legal-body li { margin-bottom: 0.5rem; }
 .legal-updated { font-size: 1rem !important; color: var(--text-light); margin-bottom: var(--spacing-md); }
+
+/* Patient Forms hub */
+.patient-forms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); }
+.patient-form-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.patient-form-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.patient-form-card h3 { font-size: clamp(1.3rem, 2vw, 1.7rem); color: var(--text-dark); margin: 0; }
+.patient-form-card p { color: var(--text-medium); font-size: clamp(1.1rem, 1.7vw, 1.4rem); margin: 0; }
+.patient-form-card .patient-form-card-cta { color: var(--primary-color); font-weight: 700; margin-top: auto; }
+
+/* Patient Forms — form (near-identical to .contact-form, standalone) */
+.patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  max-width: 640px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+.patient-form label { display: flex; flex-direction: column; gap: 0.3rem; font-weight: 600; font-size: 1.15rem; }
+.patient-form input, .patient-form textarea {
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background: var(--primary-lighter);
+}
+.patient-form input:focus, .patient-form textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+  background: #fff;
+}
+.patient-form input[readonly] { background: var(--border-light); color: var(--text-medium); cursor: default; }
+.patient-form .form-checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+.patient-form .form-checkbox input { width: auto; margin-top: 0.2rem; }
+.form-helper { font-size: 0.95rem; color: var(--text-light); font-weight: 400; }
+.form-note { font-size: 1.05rem; color: var(--text-medium); }
 
 @media (max-width: 860px) {
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .about-media { max-width: 340px; }
-  .services-detail-grid { grid-template-columns: 1fr; }
+  .services-detail-grid, .patient-forms-grid { grid-template-columns: 1fr; }
 }

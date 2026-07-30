@@ -7,6 +7,10 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Legal from './pages/Legal';
+import PatientForms from './pages/PatientForms';
+import TelehealthPolicyForm from './pages/forms/TelehealthPolicyForm';
+import ReleaseOfInfoForm from './pages/forms/ReleaseOfInfoForm';
+import ConsentForCareForm from './pages/forms/ConsentForCareForm';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -25,6 +29,10 @@ export default function App() {
           <Route path="/meet-felicia-davis" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/patient-forms" element={<PatientForms />} />
+          <Route path="/telehealth-policy" element={<TelehealthPolicyForm />} />
+          <Route path="/release-of-information" element={<ReleaseOfInfoForm />} />
+          <Route path="/consent-for-care" element={<ConsentForCareForm />} />
           <Route path="/privacy" element={<Legal kind="privacy" />} />
           <Route path="/terms" element={<Legal kind="terms" />} />
           <Route path="*" element={<Navigate to="/" replace />} />

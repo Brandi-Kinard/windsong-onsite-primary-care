@@ -26,6 +26,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/services">Services</Link></li>
             <li><Link to="/meet-felicia-davis">Meet the Provider</Link></li>
+            <li><Link to="/patient-forms">Patient Forms</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li><Link to="/privacy">Privacy Policy</Link></li>
             <li><Link to="/terms">Terms of Service</Link></li>

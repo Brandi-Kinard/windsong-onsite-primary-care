@@ -8,6 +8,7 @@ const links = [
   { to: '/', label: 'Home', end: true },
   { to: '/services', label: 'Services' },
   { to: '/meet-felicia-davis', label: 'Meet the Provider' },
+  { to: '/patient-forms', label: 'Patient Forms' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -41,9 +42,6 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
-          <a href={`tel:${practice.phone.replace(/[^0-9]/g, '')}`} className="btn btn--primary navbar-cta">
-            Call {practice.phone}
-          </a>
         </nav>
 
         <button
